@@ -1,0 +1,188 @@
+@import "font-awesome.scss";
+@import "mixin_font.scss";
+
+
+@mixin box(){
+	width:90%;
+	margin: 5vh auto;
+	padding:5vh 0;
+	background:white;
+	//line-height:10vh;
+	text-align:center;
+	box-shadow:inset $blue 2vw 0px 0px -1px;
+	text-transform:uppercase;
+	letter-spacing:.1em;
+	list-style:none;
+	position:relative;
+	font-size:5.5vw;
+	
+	.sub-text{
+		display:none;
+		color:green;
+	}
+}
+
+$blue: rgb(34, 96, 195);
+
+
+/***************************
+******** GENERAL ***********
+***************************/
+
+body{
+	margin:0;
+	position:relative;
+	@include font(light);
+}
+
+input[type="text"]{
+	width:90vw;
+	margin:1vw auto;
+	display:block;
+	border:0;
+	font-size:4vw;
+	padding:4vw 0;
+	text-align:center;
+}
+
+input[type="submit"], input[type="button"]{
+	width:90vw;
+	border:0;
+	border-radius:0;
+	background:$blue;
+	color:white;
+	font-size:4vw;
+	text-transform:uppercase;
+	letter-spacing:.1em;
+	padding:4vw 0;
+	display:block;
+	margin: 4vw auto;
+}
+
+
+/*********************************
+********** SPECIFIC **************
+*********************************/
+
+#doors{
+	width:50vw;
+	height:30vh;
+	background:rgb(255,200,200);
+	position:absolute;
+	top:0;
+	left:0;
+}
+#contacts{
+	width:50vw;
+	height:30vh;
+	background:rgb(200,255,200);
+	position:absolute;
+	top:0;
+	left:50vw;
+}
+#hometime{
+	width:100vw;
+	height:30vh;
+	position:absolute;
+	top:30vh;
+	background:rgb(200,200,255);
+}
+#totaltime{
+	width:100vw;
+	height:20vh;
+	position:absolute;
+	top:60vh;
+	background:rgb(220,220,220);
+}
+#lock{
+	top:80vh;
+	width:70vw;
+	background:rgb(230,180,230);
+	height:20vh;
+	position:absolute;
+	
+	.content{
+		font-size:11vw;
+		text-transform:uppercase;
+		letter-spacing:0.04em;
+	}
+}
+#settings{
+	top:80vh;
+	width:30vw;
+	left:70vw;
+	background:rgb(180,230,230);
+	height:20vh;
+	position:absolute;
+}
+.sub-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 1vw;
+    font-size: 6vw;
+    opacity: .6;
+}
+.content{
+	text-align:center;
+	line-height:100%;
+	vertical-align:middle;
+	font-size:20vw;
+	@include font(light);
+}
+
+body > section{
+	position:fixed;
+	overflow-y:scroll;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	background:rgb(184, 250, 207);
+	z-index:10;
+	display:none;
+	
+	span.close-menu{
+		position: absolute;
+		z-index: 100;
+		top: 2vh;
+		right: 4vw;
+		cursor: pointer;
+		font-size: 5vw;
+		display: inline-block;
+		padding: 1.5vw;
+		height: 5vw;
+		width: 5vw;
+		line-height: 5vw;
+		text-align: center;
+		border-radius: 100vw;
+		background: white;
+	}
+	
+	> div{
+		@include box();
+	}
+	
+	h1{
+		margin: 5vh auto;
+		padding:5vw 1vw;
+		@include font(medium);
+		text-align:center;
+		text-transform:uppercase;
+		letter-spacing:.1em;
+		font-size:6.75vw;	
+		text-shadow:1px 1px 1px rgba(255,255,255,.5);
+	}
+	article{
+		h1{
+			border-top:4px double;
+			padding-top:10vw;
+		}
+		ul{
+			padding:0;
+		}
+		li{
+			@include box();
+		}
+	}	
+}
